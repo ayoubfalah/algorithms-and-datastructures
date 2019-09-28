@@ -25,6 +25,26 @@ public class SearchEngine{
 			}
 		return new Interval(d,f);
 		}
+
+	private static String longestCommenPrefix(String u, String v){
+
+	    return "TODO";
+	}
+	private static Interval quickerBinarySearch(List<String> list, String key){
+		int d = -1;
+		int f = list.size();
+		int m = key.length();
+		while(d+1 < f){
+			int i = (d+f)/2;
+			String lcp = longestCommenPrefix(key, list[i]);
+			int l = lcp.length();
+			int n = list[i].length();
+			if(l == m && l = n) return new Interval(i,i);
+			else if(l > n || (l < && key.charAt(l) < list[i].charAt(l))) d = i;
+			else f = i;
+			}
+		return new Interval(d,f);
+		}
 	public static void main(String args[]){
 		List list = Arrays.asList("a", "b", "aa", "ab", "bb", "ba");
 		String key = "ab";
