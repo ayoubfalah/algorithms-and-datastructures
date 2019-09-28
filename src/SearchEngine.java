@@ -36,11 +36,11 @@ public class SearchEngine{
 		int m = key.length();
 		while(d+1 < f){
 			int i = (d+f)/2;
-			String lcp = longestCommenPrefix(key, list[i]);
+			String lcp = longestCommenPrefix(key, list.get(i));
 			int l = lcp.length();
-			int n = list[i].length();
-			if(l == m && l = n) return new Interval(i,i);
-			else if(l > n || (l < && key.charAt(l) < list[i].charAt(l))) d = i;
+			int n = list.get(i).length();
+			if(l == m && l == n) return new Interval(i,i);
+			else if(l == n || (l < m && key.charAt(l) < list.get(i).charAt(l))) d = i;
 			else f = i;
 			}
 		return new Interval(d,f);
